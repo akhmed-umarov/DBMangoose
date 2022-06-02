@@ -1,0 +1,29 @@
+<h2>Users page</h2>
+
+   <!-- <script>
+            
+            console.log(typeof {{users}}) не получилось
+   </script> -->
+{{#if users.length}}
+<ul>
+<!--Обращение к циклам в hbs произсоходит с помощью директивы #each после записываем название массива по которму необходимо сделать итерацию (перечисление) -->
+{{#each users}}
+   <li class="users">
+      <label>
+         {{#if completed}}
+         <input type="checkbox" checked="true">
+         <span class="completed">{{name}}</span>  <!--тут я могу уже обращаться к свойствам объекта db.users так как я начал делать итерацию внутри элемента users который является результатом поиска всех элементов внутри db -->
+         {{else}}
+         <input type="checkbox">
+         <span>{{name}}</span>  
+         {{/if}}
+
+
+         <button class="btn btn-small">Save</button>
+      </label>
+   </li>
+{{/each}}
+</ul>
+{{else}}
+<p>No users</p>
+{{/if}}
