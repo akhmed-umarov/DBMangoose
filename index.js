@@ -25,7 +25,7 @@ app.use(router);
 
 async function start () { 
    try { 
-      await mongoose.connect( "mongodb+srv://Akhmed:123123Laker@cluster0.sh6pm.mongodb.net/users" , {
+      await mongoose.connect( "mongodb+srv://[name and password]@cluster0.sh6pm.mongodb.net/users" , {
          useNewUrlParser: true, 
          // useFindAndModify: false
       })
